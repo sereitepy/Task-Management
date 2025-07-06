@@ -5,6 +5,7 @@ import { Task, TaskStatus, CreateTaskDto } from '@/types/task'
 import { taskApi } from '@/lib/api'
 import TaskCard from '@/components/TaskCard'
 import TaskForm from '@/components/TaskForm'
+import Link from 'next/link'
 
 export default function Home() {
   const [tasks, setTasks] = useState<Task[]>([])
@@ -92,6 +93,7 @@ export default function Home() {
 
   return (
     <div className='min-h-screen bg-gray-50 py-8'>
+      <Link href="/properties">Property Filtering</Link>
       <div className='max-w-4xl mx-auto px-4'>
         <div className='flex flex-col md:flex-row justify-between items-start md:items-center mb-8'>
           <h1 className='text-3xl font-bold text-gray-900 mb-4 md:mb-0'>
