@@ -1,3 +1,61 @@
+# 🏡 Property Filter System (Next.js + Tailwind + Dynamic Filters)
+
+A fully dynamic property filter interface built with **Next.js**, **React Hooks**, and **Tailwind CSS** — ready to plug into a **real backend API**.  
+This system supports URL-based filters, dynamic tag removal, pagination, and loading states.
+
+---
+
+## ✅ Features
+
+### 🎛️ Dynamic Filters
+- Filter by **Status**, **Type**, **Price Range**, **Search**, and **Sort**
+- All filters are reflected in the URL (`?status=active&type=house`)
+- Changes are **debounced** by React and trigger data fetching
+
+### 🏷️ Filter Tags
+- Each filter adds a visual tag (e.g. `Status: active`)
+- Click `×` to remove a filter
+- "Clear All" button removes all filters
+
+### 🔁 Pagination
+- Paginated results with page count (e.g. `Page 2 of 3`)
+- Updates URL (`?page=2`) and refetches results
+
+### 🔌 API Integration (Pluggable)
+- Mock data for now, but structured for easy replacement
+- `useEffect` watches `searchParams` and fetches data
+- Shows loading spinner while waiting
+- Error handling ready for failed requests
+
+---
+
+## 🔌 To Connect to Your Backend
+
+Replace this section in the code:
+
+
+// For demo purposes, we'll use mock data and simulate API behavior
+// In your real app, replace this with:
+// const response = await fetch(`/api/properties?${params.toString()}`);
+// const data = await response.json();
+
+With your real API call:
+```
+const response = await fetch(`/api/properties?${params.toString()}`);
+const data = await response.json();
+setProperties(data.properties);
+setTotalPages(data.totalPages);
+setTotalCount(data.totalCount);
+```
+Make sure your API returns a JSON like:
+```
+{
+  "properties": [...],
+  "totalPages": 3,
+  "totalCount": 12
+}
+```
+
 # Property Filter Demo - README & Guide
 
 This project is a full-featured property filtering UI built with **Next.js (App Router)** using `useSearchParams`, mock data, and reactive state. It includes filters, pagination, and sorting with URL synchronization, simulating a real-world property listing interface.
