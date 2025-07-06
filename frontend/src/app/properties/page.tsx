@@ -470,12 +470,12 @@ export default function PropertyFilter() {
             </div>
 
             {/* API Integration Note */}
-            <div className="mb-4 p-3 bg-yellow-900 border border-yellow-200 rounded">
+            <div className="mb-4 p-3 bg-yellow-50 border   rounded">
                 <strong>🔌 API Integration:</strong> This demo simulates your backend API. Replace the mock data section with your real API call to <code>/api/properties</code>
             </div>
 
             {/* Current URL Display */}
-            <div className="bg-gray-800 border-pink-200 p-3 rounded mb-6">
+            <div className="bg-pink-200 border-pink-200 p-3 rounded  mb-6">
                 <strong>Current URL:</strong> <span className="text-sm break-all">{typeof window !== 'undefined' ? window.location.search : ''}</span>
             </div>
 
